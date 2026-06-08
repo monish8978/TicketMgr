@@ -1,0 +1,11 @@
+[Unit]
+Description=ticket assign manager service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/Czentrix/apps/TicketMgr
+ExecStart=/Czentrix/apps/cc_app_api/venv/bin/python ticketAssignMngr.py 3306 '/var/lib/mysql/mysql.sock'
+
+[Install]
+WantedBy=multi-user.target
